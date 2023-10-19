@@ -1,16 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "{LOCATION}-{product_name}",
- "creation": "2023-10-12 18:03:42.436311",
+ "creation": "2023-10-18 10:34:16.094866",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "location_id",
   "location",
   "product_name",
-  "quantity",
   "amended_from"
  ],
  "fields": [
@@ -20,15 +19,10 @@
    "label": "Location"
   },
   {
+   "fetch_from": "amended_from.product_name",
    "fieldname": "product_name",
-   "fieldtype": "Link",
-   "label": "ProductName",
-   "options": "Product"
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity"
+   "fieldtype": "Data",
+   "label": "ProductName"
   },
   {
    "fieldname": "amended_from",
@@ -38,12 +32,17 @@
    "options": "Location",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "location_id",
+   "fieldtype": "Data",
+   "label": "LocationID"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-12 18:14:23.124070",
+ "modified": "2023-10-18 12:40:53.749938",
  "modified_by": "Administrator",
  "module": "Inventory Management",
  "name": "Location",

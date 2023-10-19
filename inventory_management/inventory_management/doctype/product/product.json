@@ -9,7 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "product_name",
-  "quantity",
+  "product_id",
+  "location",
   "amended_from"
  ],
  "fields": [
@@ -19,11 +20,6 @@
    "label": "ProductName"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -31,12 +27,24 @@
    "options": "Product",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "product_id",
+   "fieldtype": "Data",
+   "label": "ProductID"
+  },
+  {
+   "fetch_from": "amended_from.location",
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-12 18:01:03.300274",
+ "modified": "2023-10-19 10:08:03.077836",
  "modified_by": "Administrator",
  "module": "Inventory Management",
  "name": "Product",

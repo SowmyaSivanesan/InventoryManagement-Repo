@@ -1,18 +1,18 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "MOVEMENT-{product_id}-{###}",
  "creation": "2023-10-12 18:12:15.524269",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "movement_id",
   "time_stamp",
   "from_location",
   "to_location",
-  "product_id",
-  "quantity",
+  "qty",
+  "product_name",
   "amended_from"
  ],
  "fields": [
@@ -22,27 +22,17 @@
    "label": "TimeStamp"
   },
   {
+   "fetch_from": "product_name.location",
    "fieldname": "from_location",
    "fieldtype": "Link",
    "label": "FromLocation",
    "options": "Location"
   },
   {
+   "fetch_from": "amended_from.to_location",
    "fieldname": "to_location",
-   "fieldtype": "Link",
-   "label": "ToLocation",
-   "options": "Location"
-  },
-  {
-   "fieldname": "product_id",
-   "fieldtype": "Link",
-   "label": "ProductId",
-   "options": "Product"
-  },
-  {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity"
+   "fieldtype": "Data",
+   "label": "ToLocation"
   },
   {
    "fieldname": "amended_from",
@@ -52,12 +42,28 @@
    "options": "ProductMovements",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "movement_id",
+   "fieldtype": "Data",
+   "label": "MovementID"
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Link",
+   "label": "ProductName",
+   "options": "Product"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-12 18:12:15.524269",
+ "modified": "2023-10-19 10:08:58.648548",
  "modified_by": "Administrator",
  "module": "Inventory Management",
  "name": "ProductMovements",
